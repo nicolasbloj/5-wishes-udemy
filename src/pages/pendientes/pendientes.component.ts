@@ -1,3 +1,4 @@
+import { ListaDeseosService } from '../../app/services/lista-deseos.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class PendientesComponent {
 
-  constructor() {
+  constructor(public _listaDeseosSerivice: ListaDeseosService) {
 
   }
 
