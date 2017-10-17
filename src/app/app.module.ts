@@ -1,3 +1,5 @@
+import { PlaceHolderPipe } from './pipes/placeholder.pipe';
+import { AgregarComponent } from '../pages/agregar/agregar.component';
 import { ListaDeseosService } from './services/lista-deseos.service';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,7 +18,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     TabsPage,
     PendientesComponent,
-    TerminadosComponent
+    TerminadosComponent,
+    AgregarComponent,
+    PlaceHolderPipe
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     TabsPage,
     PendientesComponent,
-    TerminadosComponent
+    TerminadosComponent,
+    AgregarComponent
   ],
   providers: [
     StatusBar,
