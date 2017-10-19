@@ -15,7 +15,11 @@ export class ListaDeseosService {
         this.listas.push(lista);
         this.saveLista();
     }
-
+    
+    eliminarLista(index: number): void {
+        this.listas.splice(index, 1);
+        this.saveLista();
+    }
     saveLista(): void {
         localStorage.setItem("listas", JSON.stringify(this.listas));
     }
