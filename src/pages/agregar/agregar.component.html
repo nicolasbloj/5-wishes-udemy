@@ -27,8 +27,8 @@
     </ion-card-content>
   </ion-card>
 
-  <!--  items  --> 
-  
+  <!--  items  -->
+
   <ion-card>
     <ion-card-header>
       <h3>Items agregados</h3>
@@ -41,7 +41,7 @@
           <button ion-button color='dark' clear>
           {{item.nombre}}
           </button>
-          <button ion-button outline item-right color='danger'>
+          <button ion-button outline item-right color='danger' (click)='eliminarItem(i)'>
             <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
             Borrar - {{i}}
           </button>

@@ -1,7 +1,7 @@
 import { ListaDeseosService } from '../../app/services/lista-deseos.service';
 import { Component } from '@angular/core';
 
-import { ListaItem , Lista} from '../../app/classes/index';
+import { ListaItem, Lista } from '../../app/classes/index';
 
 @Component({
   selector: 'app-agregar',
@@ -21,19 +21,23 @@ export class AgregarComponent {
 
   agregarItem(): void {
     if (this.nombre_item.length === 0) {
-      return; 
+      return;
     }
-    this.items.push({nombre: this.nombre_item, completado: false});
+    this.items.push({ nombre: this.nombre_item, completado: false });
     this.nombre_item = '';
+  }
+
+  eliminarItem(index: number): void {
+    this.items.splice(index, 1);
   }
 
   agregarLista(): void {
     if (this.nombre_lista.length === 0) {
-      return; 
+      return;
     }
 
-    this._listaDeseosService.listas.push(new Lista(this.nombre_lista,this.items))
-    
+    this._listaDeseosService.listas.push(new Lista(this.nombre_lista, this.items))
+
     this.items = [];
     this.nombre_lista = '';
   }
