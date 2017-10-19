@@ -1,3 +1,4 @@
+import { PendientesPipe } from './pipes/pendientes.pipe';
 import { DetalleComponent } from '../pages/detalle/detalle.component';
 import { PlaceHolderPipe } from './pipes/placeholder.pipe';
 import { AgregarComponent } from '../pages/agregar/agregar.component';
@@ -22,6 +23,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     TerminadosComponent,
     AgregarComponent,
     PlaceHolderPipe,
+    PendientesPipe,
     DetalleComponent
   ],
   imports: [
