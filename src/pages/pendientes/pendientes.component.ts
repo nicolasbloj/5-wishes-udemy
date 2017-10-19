@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { ListaDeseosService } from '../../app/services/lista-deseos.service';
@@ -11,7 +11,7 @@ import { AgregarComponent } from '../agregar/agregar.component';
 export class PendientesComponent {
 
   constructor(public _listaDeseosSerivice: ListaDeseosService,
-     private _navController: NavController) {
+    private _navController: NavController) {
 
   }
 

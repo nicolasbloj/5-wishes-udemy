@@ -29,7 +29,7 @@
 
   <!--  items  -->
 
-  <ion-card>
+  <ion-card *ngIf = 'this.items.length > 0' >
     <ion-card-header>
       <h3>Items agregados</h3>
     </ion-card-header>
@@ -51,6 +51,9 @@
     </ion-card-content>
   </ion-card>
 
-  <button ion-button class='button-block' (click)='agregarLista()'> Agregar Lista</button>
+  <button ion-button icon-left class='button-block' (click)='agregarLista()' > 
+      <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
+      Agregar Lista
+  </button>
 
 </ion-content>
