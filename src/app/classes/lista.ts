@@ -2,7 +2,7 @@ import { ListaItem } from './lista-item';
 
 export class Lista {
     nombre: string;
-    terminada: boolean;
+    //terminada: boolean;
     items: ListaItem[];
 
     constructor (nombre:string);
@@ -11,7 +11,7 @@ export class Lista {
 
     constructor(nombre: string, items?:ListaItem[]) {
         this.nombre = nombre;
-        this.terminada = false;
+        //this.terminada = false;
         this.items = items;
     }
 }

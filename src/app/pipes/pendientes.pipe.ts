@@ -3,19 +3,26 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { Lista } from '../classes';
 
 @Pipe({
-    name: 'pendientes'
+    name: 'pendientes',
+    pure: false
 })
 export class PendientesPipe implements PipeTransform {
 
-    transform(listas: Lista[], args:any): Lista[] {
-        let listas_pendientes: Lista[] = [];
+    transform(listas: Lista[], pendiente: boolean): Lista[] {
+        let listas_pendientesOcompletados: Lista[] = [];
 
         for (let lista of listas) {
-            if (this.listaEstaCompletada(lista)) {
-                listas_pendientes.push(lista);
-            }
+            if (pendiente) {
+                if (!this.listaEstaCompletada(lista)) {
+                    listas_pendientesOcompletados.push(lista);
+                }
+            }else{
+                if (this.listaEstaCompletada(lista)) {
+                    listas_pendientesOcompletados.push(lista);
+                }
+            } 
         }
-        return listas_pendientes;
+        return listas_pendientesOcompletados;
     }
 
     listaEstaCompletada(lista: Lista): boolean {

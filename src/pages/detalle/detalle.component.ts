@@ -10,7 +10,7 @@ import { ListaDeseosService } from '../../app/services/lista-deseos.service';
 })
 export class DetalleComponent implements OnInit {
 
-    lista: Lista[];
+    lista: Lista;
     index: number;
 
     constructor(

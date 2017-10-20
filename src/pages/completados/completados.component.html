@@ -1,23 +1,22 @@
 <ion-header>
   <ion-navbar color='primary'>
-    <ion-title>Pendientes</ion-title>
+    <ion-title>Completados</ion-title>
   </ion-navbar>
 </ion-header>
 
-
-    
 <ion-content padding>
+    <ion-grid *ngIf='( _listaDeseosSerivice.listas | pendientes: false ).length === 0' >
+        <ion-row>
+          <ion-col class='text-center caja-vacia'>
+              <ion-icon class='icono-grande' ios="ios-sunny" md="md-sunny"></ion-icon>
+              <p> No hay ninguna lista </p>          
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 
-  <ion-grid *ngIf='( _listaDeseosSerivice.listas | pendientes: true ).length === 0' >
-    <ion-row>
-      <ion-col class='text-center caja-vacia'>
-          <ion-icon class='icono-grande' ios="ios-sunny" md="md-sunny"></ion-icon>
-          <p> No hay ninguna lista </p>          
-      </ion-col>
-    </ion-row>
-  </ion-grid>
 
-  <ion-card *ngFor='let lista of _listaDeseosSerivice.listas | pendientes: true; let i=index'>
+
+  <ion-card *ngFor='let lista of _listaDeseosSerivice.listas | pendientes:false; let i=index'>
 
     <ion-item color='dark' (click)='detallarLista(lista,i)'>
       {{ lista.nombre }}
@@ -42,12 +41,5 @@
 
     </ion-list>
   </ion-card>
-
-
-  <ion-fab right bottom>
-    <button ion-fab color="primary" (click)='irAgregar()'>
-        <ion-icon ios="ion-add" md='md-add'></ion-icon>
-      </button>
-  </ion-fab>
 
 </ion-content>
